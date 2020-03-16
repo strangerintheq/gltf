@@ -1,0 +1,121 @@
+{
+  "asset": {
+    "version": "1.0"
+  },
+  "geometricError": 5000,
+  "root": {
+    "boundingVolume": {
+      "sphere": [
+        2741797.25,
+        1649926.5,
+        5498865.5,
+        569.2066040039063
+      ]
+    },
+    "children": [
+      {
+        "boundingVolume": {
+          "sphere": [
+            2741745.75,
+            1649792.25,
+            5498946.5,
+            188.01315307617188
+          ]
+        },
+        "content": {
+          "uri": "Data/0/tileset.json"
+        },
+        "geometricError": 0.0
+      },
+      {
+        "boundingVolume": {
+          "sphere": [
+            2741651.5,
+            1649923.75,
+            5498942.5,
+            152.86056518554688
+          ]
+        },
+        "content": {
+          "uri": "Data/1/tileset.json"
+        },
+        "geometricError": 0.0
+      },
+      {
+        "boundingVolume": {
+          "sphere": [
+            2741937.75,
+            1649940.25,
+            5498795.0,
+            212.7853240966797
+          ]
+        },
+        "content": {
+          "uri": "Data/2/tileset.json"
+        },
+        "geometricError": 0.0
+      },
+      {
+        "boundingVolume": {
+          "sphere": [
+            2741739.75,
+            1649973.125,
+            5498893.0,
+            166.06275939941406
+          ]
+        },
+        "content": {
+          "uri": "Data/3/tileset.json"
+        },
+        "geometricError": 0.0
+      },
+      {
+        "boundingVolume": {
+          "sphere": [
+            2741916.75,
+            1649689.75,
+            5498884.0,
+            265.9338073730469
+          ]
+        },
+        "content": {
+          "uri": "Data/4/tileset.json"
+        },
+        "geometricError": 0.0
+      },
+      {
+        "boundingVolume": {
+          "sphere": [
+            2741916.75,
+            1650162.625,
+            5498734.5,
+            238.16773986816406
+          ]
+        },
+        "content": {
+          "uri": "Data/5/tileset.json"
+        },
+        "geometricError": 0.0
+      },
+      {
+        "boundingVolume": {
+          "sphere": [
+            2741668.25,
+            1650186.0,
+            5498854.5,
+            255.7100067138672
+          ]
+        },
+        "content": {
+          "uri": "Data/6/tileset.json"
+        },
+        "geometricError": 0.0
+      }
+    ],
+    "content": {
+      "uri": "Data/a.b3dm"
+    },
+    "geometricError": 0.2700000000000001,
+    "refine": "REPLACE"
+  }
+}
