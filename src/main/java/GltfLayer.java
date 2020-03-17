@@ -66,20 +66,20 @@ public class GltfLayer extends GltfViewerJogl implements Layer {
 
     @Override
     public void render(DrawContext drawContext) {
-        OGLStackHandler ogsh = new OGLStackHandler();
-        GL2 gl = (GL2) drawContext.getGL();
-        ogsh.pushAttrib(gl, GL2.GL_ALL_ATTRIB_BITS);
-        ogsh.pushModelview(gl);
-        ogsh.pushProjection(gl);
-        ogsh.pushTexture(gl);
-        gl.glPushClientAttrib(GL2.GL_CLIENT_PIXEL_STORE_BIT);
-        IntBuffer buf = IntBuffer.allocate(1);
-        gl.glGetIntegerv(GL2.GL_CURRENT_PROGRAM, buf);
+//        OGLStackHandler ogsh = new OGLStackHandler();
+//        GL2 gl = (GL2) drawContext.getGL();
+//        ogsh.pushAttrib(gl, GL2.GL_ALL_ATTRIB_BITS);
+//        ogsh.pushModelview(gl);
+//        ogsh.pushProjection(gl);
+//        ogsh.pushTexture(gl);
+//        gl.glPushClientAttrib(GL2.GL_CLIENT_PIXEL_STORE_BIT);
+//        IntBuffer buf = IntBuffer.allocate(1);
+//        gl.glGetIntegerv(GL2.GL_CURRENT_PROGRAM, buf);
         doRender();
-        gl.glPushClientAttrib(GL2.GL_CLIENT_PIXEL_STORE_BIT);
-        System.out.println("buf = " + buf.get());
-        gl.glUseProgram(buf.get());
-        ogsh.pop(gl);
+//        gl.glPushClientAttrib(GL2.GL_CLIENT_PIXEL_STORE_BIT);
+//        System.out.println("buf = " + buf.get());
+//        gl.glUseProgram(buf.get());
+//        ogsh.pop(gl);
 //
 //         drawContext.restoreDefaultBlending();
 //         drawContext.restoreDefaultCurrentColor();

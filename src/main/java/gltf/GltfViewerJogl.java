@@ -29,6 +29,7 @@ package gltf;
 
 
 import javax.media.opengl.GL;
+import javax.media.opengl.GL2;
 import javax.media.opengl.GL3;
 import javax.media.opengl.GLAutoDrawable;
 import javax.media.opengl.GLCapabilities;
@@ -140,10 +141,10 @@ public class GltfViewerJogl extends AbstractGltfViewer<Component>
     {
         // Enable the color and depth mask explicitly before calling glClear.
         // When they are not enabled, they will not be cleared!
-//        gl.glColorMask(true, true, true, true);
-//        gl.glDepthMask(true);
-//        gl.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+        gl.glColorMask(true, true, true, true);
+        gl.glDepthMask(true);
+        gl.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+//        String s = gl.glGetString(GL2.GL_SHADING_LANGUAGE_VERSION);
         renderGltfModels();
     }
 
