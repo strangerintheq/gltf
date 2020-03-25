@@ -1,6 +1,10 @@
 import gltf.GltfViewerJogl;
+import gov.nasa.worldwind.View;
 import gov.nasa.worldwind.avlist.AVList;
 import gov.nasa.worldwind.event.Message;
+import gov.nasa.worldwind.geom.Angle;
+import gov.nasa.worldwind.geom.Matrix;
+import gov.nasa.worldwind.geom.Vec4;
 import gov.nasa.worldwind.layers.Layer;
 import gov.nasa.worldwind.render.DrawContext;
 import gov.nasa.worldwind.util.OGLStackHandler;
@@ -65,26 +69,20 @@ public class GltfLayer extends GltfViewerJogl implements Layer {
     }
 
     @Override
-    public void render(DrawContext drawContext) {
-        OGLStackHandler ogsh = new OGLStackHandler();
-        GL2 gl = (GL2) drawContext.getGL();
-        ogsh.pushAttrib(gl, GL2.GL_ALL_ATTRIB_BITS);
-        ogsh.pushModelview(gl);
-        ogsh.pushProjection(gl);
-        ogsh.pushTexture(gl);
-        gl.glPushClientAttrib(GL2.GL_CLIENT_PIXEL_STORE_BIT);
-        IntBuffer buf = IntBuffer.allocate(1);
-        gl.glGetIntegerv(GL2.GL_CURRENT_PROGRAM, buf);
-        doRender();
-        gl.glPushClientAttrib(GL2.GL_CLIENT_PIXEL_STORE_BIT);
-        System.out.println("buf = " + buf.get());
-        gl.glUseProgram(buf.get());
-        ogsh.pop(gl);
-//
-//         drawContext.restoreDefaultBlending();
-//         drawContext.restoreDefaultCurrentColor();
-//         drawContext.restoreDefaultDepthTesting();
-
+    public void render(DrawContext dc) {
+        GL2 gl = dc.getGL().getGL2();
+        try
+        {
+//            gl.glPushAttrib(GL2.GL_ALL_ATTRIB_BITS);
+//            gl.glPushClientAttrib((int) GL2.GL_ALL_CLIENT_ATTRIB_BITS);
+            doRender();
+        }
+        finally
+        {
+            gl.glUseProgram(0);
+//            gl.glPopAttrib();
+//            gl.glPopClientAttrib();
+        }
     }
 
     @Override

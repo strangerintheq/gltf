@@ -57,7 +57,7 @@ import static javax.media.opengl.GL2ES3.GL_TEXTURE_MAX_LEVEL;
 /**
  * Implementation of a {@link GlContext} based on JOGL
  */
-class GlContextJogl implements GlContext
+public class GlContextJogl implements GlContext
 {
     /**
      * The logger used in this class
@@ -191,11 +191,11 @@ class GlContextJogl implements GlContext
      */
     private Integer createGlShader(int shaderType, String shaderSource)
     {
-        Integer glShader = createGlShaderImpl(shaderType, shaderSource);
-        if (glShader != null)
-        {
-            return glShader;
-        }
+//        Integer glShader = createGlShaderImpl(shaderType, shaderSource);
+//        if (glShader != null)
+//        {
+//            return glShader;
+//        }
                 
         // If the shader source code does not contain a #version number, 
         // then, depending on the com.jogamp.opengl.GLProfile that was 
@@ -205,7 +205,7 @@ class GlContextJogl implements GlContext
         // (Also see https://github.com/javagl/JglTF/issues/12)
         if (!shaderSource.contains("#version"))
         {
-            String versionString = "#version 120";
+            String versionString = "#version 130";
             logger.warning("Inserting GLSL version specifier \"" + 
                 versionString + "\" in shader code");
             String shaderSourceWithVersion = 
